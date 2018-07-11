@@ -12,9 +12,12 @@ package src.mx.uam.ayd.practica;
 public class Aplicacion {
 
     static Libreria libreriaInicial;
+    static DAOAutor autoresInicial;
 
     public static void main(String[] args) {
         libreriaInicial = new Libreria();
+        autoresInicial = new DAOAutor();
+        
         Aplicacion app = new Aplicacion();
         app.inicia();
     }
@@ -32,6 +35,8 @@ public class Aplicacion {
 
     public void agregarAutor() {
         System.out.println("agregarAutor");
+        ControlAgregarAutor nuevoAutor = new ControlAgregarAutor(autoresInicial);
+        nuevoAutor.inicia();
     }
 
     public void agregarLibro() {
